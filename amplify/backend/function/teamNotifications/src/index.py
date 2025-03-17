@@ -105,9 +105,10 @@ def send_slack_notifications(
 
     for recipient in recipients:
         try:
-            recipient_slack_user = slack_client.users_lookupByEmail(email=recipient)
-            recipient_slack_id = recipient_slack_user["user"]["id"]
-            recipient_timezone = tz.gettz(name=recipient_slack_user["user"]["tz"])
+            # recipient_slack_user = slack_client.users_lookupByEmail(email=recipient)
+            # recipient_slack_id = recipient_slack_user["user"]["id"]
+            # recipient_timezone = tz.gettz(name=recipient_slack_user["user"]["tz"])
+            recipient_slack_id = "WKWQMM3NX"
         except Exception as error:
             print(f"Error getting Slack user info for {recipient}: {error}")
             continue
@@ -141,10 +142,10 @@ def send_slack_notifications(
                         "type": "mrkdwn",
                         "text": f"*Account:*\n{account}",
                     },
-                    {
-                        "type": "mrkdwn",
-                        "text": f"*Start time:*\n{formatted_date}",
-                    },
+                    # {
+                    #     "type": "mrkdwn",
+                    #     "text": f"*Start time:*\n{formatted_date}",
+                    # },
                     {"type": "mrkdwn", "text": f"*Role:*\n{role}"},
                     {
                         "type": "mrkdwn",
