@@ -114,8 +114,8 @@ def send_slack_notifications(
             continue
 
         # Format date, localized to recipient's timezone
-        localized_date = parsed_date.astimezone(recipient_timezone)
-        formatted_date = localized_date.strftime("%B %d, %Y at %I:%M %p %Z")
+        # localized_date = parsed_date.astimezone(recipient_timezone)
+        # formatted_date = localized_date.strftime("%B %d, %Y at %I:%M %p %Z")
 
         # Build message using Slack blocks
         message_blocks = [
